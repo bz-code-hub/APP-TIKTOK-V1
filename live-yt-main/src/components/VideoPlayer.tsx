@@ -2,9 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, X, MousePointerClick, Gift, Tag, TrendingUp, Sparkles, MoreVertical, Flame, Star } from "lucide-react";
 import { videoConfig, channelConfig, ctaButtonConfig, liveBannersConfig } from "@/config/livestream-config";
-import profileImg from "../../../public/images/profile.jpg";
-import viewer1Img from "../../../public/images/viewer1.svg";
-import viewer2Img from "../../../public/images/viewer2.svg";
 
 interface VideoPlayerProps {
   videoId?: string;
@@ -165,12 +162,6 @@ export const VideoPlayer = ({ videoId = videoConfig.videoId }: VideoPlayerProps)
 
   // Auto-detect profile image with any extension
   useEffect(() => {
-    // If profileImageUrl is just "profile", use the imported image
-    if (channelConfig.profileImageUrl === "profile") {
-      setProfileImagePath(profileImg);
-      return;
-    }
-
     const resolvedPath = resolveProfileImage(channelConfig.profileImageUrl);
 
     if (!resolvedPath) {
@@ -626,8 +617,8 @@ export const VideoPlayer = ({ videoId = videoConfig.videoId }: VideoPlayerProps)
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Viewers avatars */}
             <div className="flex items-center -space-x-2">
-              <img src={viewer1Img} alt="Viewer 1" className="w-6 h-6 rounded-full border-2 border-black" />
-              <img src={viewer2Img} alt="Viewer 2" className="w-6 h-6 rounded-full border-2 border-black" />
+              <img src="/images/viewer1.svg" alt="Viewer 1" className="w-6 h-6 rounded-full border-2 border-black" />
+              <img src="/images/viewer2.svg" alt="Viewer 2" className="w-6 h-6 rounded-full border-2 border-black" />
             </div>
 
             {/* Viewer count badge */}

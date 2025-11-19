@@ -96,9 +96,6 @@ export const channelConfig = {
   // ❤️ Hearts/Likes count displayed in header
   // Examples: "4.8K", "12K", "1.2M", "500"
   heartsCount: "2.1K",
-
-  // Welcome message
-  welcomeMessage: "Welcome to the live stream! 🎥",
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -208,9 +205,6 @@ export const ctaButtonConfig = {
 export const chatConfig = {
   // 📱 How many comments to show on screen at once
   visibleComments: 5,
-
-  // 🎨 Message input placeholder
-  inputPlaceholder: "Send a message...",
 
   // ⏱️ Interval between comments (in seconds)
   // Set to 1 for comments to appear every 1 second

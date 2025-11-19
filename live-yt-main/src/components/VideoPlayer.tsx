@@ -153,7 +153,6 @@ const getBannerIcon = (iconType: string) => {
 export const VideoPlayer = ({ videoId = videoConfig.videoId }: VideoPlayerProps) => {
   const extractedVideoId = extractYouTubeId(videoId);
   const [currentViewers, setCurrentViewers] = useState(videoConfig.viewers.initialCount);
-  const [isLiked, setIsLiked] = useState(false);
   const [hasDropped, setHasDropped] = useState(false);
   const [showCtaButton, setShowCtaButton] = useState(false);
   const [floatingHearts, setFloatingHearts] = useState<FloatingHeart[]>([]);
@@ -267,11 +266,6 @@ export const VideoPlayer = ({ videoId = videoConfig.videoId }: VideoPlayerProps)
 
     return () => clearInterval(interval);
   }, []);
-
-  const handleHeartClick = () => {
-    setIsLiked(!isLiked);
-    addFloatingHeart();
-  };
 
   useEffect(() => {
     const container = playerContainerRef.current;

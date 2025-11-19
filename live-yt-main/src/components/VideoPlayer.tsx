@@ -14,6 +14,7 @@ interface VideoPlayerProps {
 interface FloatingHeart {
   id: number;
   left: number;
+  emoji?: string; // Optional emoji for reactions other than heart
 }
 
 // Helper function to extract YouTube video ID from URL or return ID directly
@@ -241,26 +242,28 @@ export const VideoPlayer = ({ videoId = videoConfig.videoId }: VideoPlayerProps)
     return () => clearInterval(interval);
   }, []);
 
-  // Function to add floating hearts
-  const addFloatingHeart = () => {
-    const newHeart: FloatingHeart = {
-      id: heartIdCounter.current++,
-      left: Math.random() * 60 + 20, // Random position between 20% and 80%
-    };
-    setFloatingHearts((prev) => [...prev, newHeart]);
-
-    // Remove heart after animation (3 seconds)
-    setTimeout(() => {
-      setFloatingHearts((prev) => prev.filter((h) => h.id !== newHeart.id));
-    }, 3000);
-  };
-
-  // Auto-generate hearts periodically (TikTok effect)
+  // Auto-generate reactions periodically (TikTok effect)
   useEffect(() => {
+    const reactions = ['❤️', '🌹', '🎁', '😂', '😍', '🔥', '👏', '🎉'];
+
     const interval = setInterval(() => {
-      if (Math.random() > 0.7) {
-        // 30% chance every 2 seconds
-        addFloatingHeart();
+      const random = Math.random();
+
+      if (random > 0.5) {
+        // 50% chance - add floating heart or emoji every 2 seconds
+        const randomEmoji = reactions[Math.floor(Math.random() * reactions.length)];
+
+        const newReaction: FloatingHeart = {
+          id: heartIdCounter.current++,
+          left: Math.random() * 60 + 20, // Random position between 20% and 80%
+          emoji: randomEmoji === '❤️' ? undefined : randomEmoji, // Only set emoji if not heart
+        };
+        setFloatingHearts((prev) => [...prev, newReaction]);
+
+        // Remove after animation (3 seconds)
+        setTimeout(() => {
+          setFloatingHearts((prev) => prev.filter((h) => h.id !== newReaction.id));
+        }, 3000);
       }
     }, 2000);
 
@@ -663,7 +666,11 @@ export const VideoPlayer = ({ videoId = videoConfig.videoId }: VideoPlayerProps)
             animation: 'float-up 3s ease-out forwards',
           }}
         >
-          <Heart className="w-6 h-6 fill-white/90 text-white/90 drop-shadow-lg" />
+          {heart.emoji ? (
+            <span className="text-3xl drop-shadow-lg">{heart.emoji}</span>
+          ) : (
+            <Heart className="w-6 h-6 fill-white/90 text-white/90 drop-shadow-lg" />
+          )}
         </div>
       ))}
 

@@ -80,7 +80,13 @@ export const videoConfig = {
 
 export const textConfig = {
   // Follow button text
-  followButtonText: "Seguir",
+  // Change to your preferred language:
+  // English: "Follow"
+  // Portuguese: "Seguir"
+  // Spanish: "Seguir"
+  // French: "Suivre"
+  // German: "Folgen"
+  followButtonText: "Follow",
   followButtonSymbol: "+",
 
   // Add more language texts as needed

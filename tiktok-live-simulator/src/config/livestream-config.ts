@@ -1,12 +1,3 @@
-/**
- * LIVESTREAM CONFIGURATION
- * Edit this file to customize your live broadcast settings
- */
-
-// ═══════════════════════════════════════════════════════════════
-// VIDEO CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-
 export const videoConfig = {
   videoType: "youtube" as "youtube" | "panda" | "vturb" | "vimeo" | "direct",
   videoId: "https://www.youtube.com/shorts/VsWdwMfr6A0",
@@ -15,7 +6,6 @@ export const videoConfig = {
   vimeoEmbedCode: ``,
   directVideoUrl: "",
   title: "Live Stream Broadcast",
-
   viewers: {
     initialCount: 280,
     beforeDrop: { min: 250, max: 400 },
@@ -25,18 +15,10 @@ export const videoConfig = {
   },
 };
 
-// ═══════════════════════════════════════════════════════════════
-// LANGUAGE & TEXT CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-
 export const textConfig = {
   followButtonText: "Follow",
   followButtonSymbol: "+",
 };
-
-// ═══════════════════════════════════════════════════════════════
-// CHANNEL CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
 
 export const channelConfig = {
   name: "Doctor",
@@ -45,14 +27,9 @@ export const channelConfig = {
   heartsCount: "2.5K",
 };
 
-// ═══════════════════════════════════════════════════════════════
-// LIVE BANNERS CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-
 export const liveBannersConfig = {
   enabled: true,
   rotationInterval: 5,
-  
   banners: [
     { text: "Popular LIVE", icon: "heart", iconColor: "text-orange-400" },
     { text: "Daily rankings", icon: "flame", iconColor: "text-yellow-400" },
@@ -61,23 +38,17 @@ export const liveBannersConfig = {
     { text: "Rising star", icon: "sparkles", iconColor: "text-pink-400" },
     { text: "Weekly rankings", icon: "flame", iconColor: "text-orange-500" },
   ],
-
   rightBanner: {
     enabled: true,
     text: "LIVE FEST",
   },
 };
 
-// ═══════════════════════════════════════════════════════════════
-// CTA BUTTON CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-
 export const ctaButtonConfig = {
   enabled: true,
   text: "Tap the button!",
   delayInSeconds: 20,
   link: "https://example.com",
-  
   color: {
     red: true,
     blue: false,
@@ -85,7 +56,6 @@ export const ctaButtonConfig = {
     black: false,
     white: false,
   },
-
   effects: {
     pulse: false,
     glow: false,
@@ -93,7 +63,6 @@ export const ctaButtonConfig = {
     bounce: true,
     float: false,
   },
-
   icon: {
     click: false,
     gift: true,
@@ -103,19 +72,11 @@ export const ctaButtonConfig = {
   },
 };
 
-// ═══════════════════════════════════════════════════════════════
-// CHAT CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-
 export const chatConfig = {
   visibleComments: 8,
   commentInterval: 1,
   loopComments: true,
 };
-
-// ═══════════════════════════════════════════════════════════════
-// CHAT COMMENTS
-// ═══════════════════════════════════════════════════════════════
 
 export const comments = [
   { user: "Margaret Wilson", message: "I've already tried it and it really works!" },

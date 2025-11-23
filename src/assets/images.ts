@@ -1,23 +1,30 @@
-// Profile image - imported directly to ensure Vite bundles it correctly
-import profileJpg from "../../../public/images/profile.jpg";
-
 /**
  * Get the image URL for profile images
- * Directly returns imported image URL to avoid path issues in production
+ * Uses /images/ path which is automatically served from public/images/ by Vite
  */
 export const getProfileImageUrl = (filename: string): string => {
+  if (!filename) return "";
+
   // Normalize filename
   const normalizedName = filename.toLowerCase();
 
-  // Map all profile references to the imported image
-  if (
-    normalizedName === "profile" ||
-    normalizedName === "profile.jpg" ||
-    normalizedName === "profile.jpeg"
-  ) {
-    return profileJpg;
+  // For all images, use the /images/ path
+  // The public/images/ folder is automatically served as /images/ by Vite
+  if (normalizedName === "profile") {
+    return "/images/profile.jpg"; // Default to JPG if no extension
   }
 
-  // For other custom images, construct path
+  // If filename already has extension, use as-is
+  if (
+    normalizedName === "profile.jpg" ||
+    normalizedName === "profile.jpeg" ||
+    normalizedName === "profile.png" ||
+    normalizedName === "profile.gif" ||
+    normalizedName === "profile.webp"
+  ) {
+    return `/images/${filename}`;
+  }
+
+  // For any other custom image
   return `/images/${filename}`;
 };

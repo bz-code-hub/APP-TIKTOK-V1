@@ -1,5 +1,5 @@
 /**
- * ⚙️ LIVESTREAM CONFIGURATION
+ * LIVESTREAM CONFIGURATION
  * Edit this file to customize your live broadcast settings
  */
 

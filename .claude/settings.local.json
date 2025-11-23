@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nul)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(cd:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(cat:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

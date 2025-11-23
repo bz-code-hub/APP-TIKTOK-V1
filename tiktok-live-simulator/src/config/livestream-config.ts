@@ -84,6 +84,13 @@ export const chatConfig = {
   loopComments: true,
 };
 
+// Tracking pixels (Facebook, TikTok, Google Analytics)
+export const pixelsConfig = {
+  facebookPixel: ``,
+  tiktokPixel: ``,
+  googleAnalyticsPixel: ``,
+};
+
 // Chat messages
 export const comments = [
   { user: "Margaret Wilson", message: "I've already tried it and it really works!" },

@@ -310,13 +310,3 @@ export const comments = [
   { user: "Carole Roman", message: "Does it work on arms too?" },
   { user: "Brandy Webster", message: "My sister recommended this to me" },
 ];
-
-// ═══════════════════════════════════════════════════════════════
-// TRACKING PIXELS CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-
-export const pixelsConfig = {
-  facebookPixel: ``,
-  tiktokPixel: ``,
-  googleAnalyticsPixel: ``,
-};

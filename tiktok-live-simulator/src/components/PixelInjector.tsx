@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { pixelsConfig } from "@/config/livestream-config";
+import { pixelsConfig } from "@/config/pixels-config";
 
 /**
  * PixelInjector Component

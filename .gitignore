@@ -29,10 +29,4 @@ dist-ssr
 .env.production
 .env.development
 
-# Profile images (add your own)
-public/images/*.jpg
-public/images/*.png
-public/images/*.jpeg
-public/images/*.gif
-public/images/*.webp
-!public/images/.gitkeep
+# User profile images - git track your own images in public/images/

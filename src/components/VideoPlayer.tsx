@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, Eye, X, MousePointerClick, Gift, Tag, TrendingUp, Sparkles, MessageCircle, Share2, User, Users, MoreVertical, Flame, Star } from "lucide-react";
 import { videoConfig, channelConfig, ctaButtonConfig, liveBannersConfig } from "@/config/livestream-config";
+import { getProfileImageUrl } from "@/assets/images";
 
 interface VideoPlayerProps {
   videoId?: string;
@@ -41,18 +42,6 @@ const extractYouTubeId = (input: string): string => {
   return input;
 };
 
-// Helper function to resolve profile image path
-const resolveProfileImage = (input: string): string => {
-  if (!input) return "";
-
-  // If it's already a full path, return as-is
-  if (input.startsWith("/")) {
-    return input;
-  }
-
-  // Otherwise prepend /images/ path
-  return `/images/${input}`;
-};
 
 // Helper function to get CTA button styles
 const getCtaButtonStyles = () => {
@@ -147,8 +136,12 @@ export const VideoPlayer = ({ videoId = videoConfig.videoId }: VideoPlayerProps)
 
   // Set profile image path
   useEffect(() => {
-    const resolvedPath = resolveProfileImage(channelConfig.profileImageUrl);
-    setProfileImagePath(resolvedPath);
+    if (channelConfig.profileImageUrl) {
+      const resolvedPath = getProfileImageUrl(channelConfig.profileImageUrl);
+      setProfileImagePath(resolvedPath);
+    } else {
+      setProfileImagePath("");
+    }
   }, []);
 
   useEffect(() => {

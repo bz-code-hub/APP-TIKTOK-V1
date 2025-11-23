@@ -1,3 +1,4 @@
+// Video and stream settings
 export const videoConfig = {
   videoType: "youtube" as "youtube" | "panda" | "vturb" | "vimeo" | "direct",
   videoId: "https://www.youtube.com/shorts/VsWdwMfr6A0",
@@ -15,11 +16,13 @@ export const videoConfig = {
   },
 };
 
+// Follow button text configuration
 export const textConfig = {
   followButtonText: "Follow",
   followButtonSymbol: "+",
 };
 
+// Channel information
 export const channelConfig = {
   name: "Doctor",
   initials: "MC",
@@ -27,6 +30,7 @@ export const channelConfig = {
   heartsCount: "2.5K",
 };
 
+// Rotating banners
 export const liveBannersConfig = {
   enabled: true,
   rotationInterval: 5,
@@ -44,6 +48,7 @@ export const liveBannersConfig = {
   },
 };
 
+// Call to action button settings
 export const ctaButtonConfig = {
   enabled: true,
   text: "Tap the button!",
@@ -72,12 +77,14 @@ export const ctaButtonConfig = {
   },
 };
 
+// Chat settings
 export const chatConfig = {
   visibleComments: 8,
   commentInterval: 1,
   loopComments: true,
 };
 
+// Chat messages
 export const comments = [
   { user: "Margaret Wilson", message: "I've already tried it and it really works!" },
   { user: "Patricia Brown", message: "Can someone send me the link please?" },

@@ -29,6 +29,9 @@ dist-ssr
 .env.production
 .env.development
 
+# Claude Code local configuration
+.claude
+
 # Profile images (add your own)
 public/images/*.jpg
 public/images/*.png

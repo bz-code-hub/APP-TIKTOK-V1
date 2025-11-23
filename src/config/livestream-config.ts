@@ -86,12 +86,17 @@ export const channelConfig = {
   initials: "MC",
 
   // 🖼️ Profile image URL (optional)
-  // Simply name your image "profile" with any extension (jpg, jpeg, png, gif, webp)
-  // Place it in /public/images/ folder
-  // The system will automatically detect: profile.jpg, profile.jpeg, profile.png, etc.
-  // Or specify a custom path: "/images/your-image.jpg"
-  // Leave empty "" to use initials
-  profileImageUrl: "profile",
+  // HOW TO USE:
+  // 1. Place your image file in the /public/images/ folder
+  // 2. Put the FULL filename with extension here: "profile.jpg"
+  //
+  // Examples:
+  //   profileImageUrl: "profile.jpg"
+  //   profileImageUrl: "my-profile.png"
+  //   profileImageUrl: "avatar.webp"
+  //
+  // Leave empty "" to use initials instead
+  profileImageUrl: "profile.jpg",
 
   // ❤️ Hearts/Likes count displayed in header
   // Examples: "4.8K", "12K", "1.2M", "500"
